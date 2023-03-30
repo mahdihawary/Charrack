@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import { connect } from "react-redux";
-import CharCard from "../src/components/charCard";
+import CharCard from "../components/charCard";
 
 const CharIndex = ({ characters }) => {
   function renderChars() {

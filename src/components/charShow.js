@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Container, Grid, Paper } from "@mui/material";
-import SpellsContainer from "../../public/containers/spellsContainer";
+import SpellsContainer from "../containers/spellsContainer";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: { flexGrow: 1, padding: theme.spacing(1) },

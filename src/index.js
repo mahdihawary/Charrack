@@ -4,10 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import rootReducer from "./redux/reducers/rootReducer";
-import { configureStore } from "@reduxjs/toolkit";
+import { store } from "./redux/store";
 
-const store = configureStore({ reducer: rootReducer });
 const root = ReactDOM.createRoot(document.getElementById("root"));
 document.body.style = "background: #4c6470;";
 root.render(

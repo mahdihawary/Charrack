@@ -15,9 +15,9 @@ import {
 } from "./redux/actions";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import CharForm from "../public/containers/charForm";
+import CharForm from "./containers/charForm";
 import Navigation from "./components/navigation";
-import CharIndex from "../public/containers/charIndex";
+import CharIndex from "./containers/charIndex";
 import LevelForm from "./components/levelForm";
 import Diceroller from "./components/diceRoller";
 
@@ -40,8 +40,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <Navigation />
-          <Routes>
+          {/* <Navigation /> */}
+          {/* <Routes>
             <Route
               path="/characters/:id/level"
               render={() => <LevelForm submitHandler={this.submitHandler} />}
@@ -70,7 +70,7 @@ class App extends React.Component {
             <Route path="/characters" render={() => <CharIndex />} />
             <Route path="/creator" render={() => <CharForm />} />
             <Route path="/" render={() => <Diceroller />} />
-          </Routes>
+          </Routes> */}
         </BrowserRouter>
       </div>
     );

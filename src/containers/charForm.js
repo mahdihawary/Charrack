@@ -1,12 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { postCharacter, resetChar } from "../src/redux/actions";
-import RaceForm from "../src/components/raceForm";
-import ClassForm from "../src/components/classForm";
-import AbilityForm from "../src/components/abilityForm";
-import NameForm from "../src/components/nameForm";
-import CharShow from "../src/components/charShow";
+import { postCharacter, resetChar } from "../redux/actions";
+import RaceForm from "../components/raceForm";
+import ClassForm from "../components/classForm";
+import AbilityForm from "../components/abilityForm";
+import NameForm from "../components/nameForm";
+import CharShow from "../components/charShow";
 import { Grid, Paper, MobileStepper, Button } from "@mui/material";
 
 // const useStyles = makeStyles({

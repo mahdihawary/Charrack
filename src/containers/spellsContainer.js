@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import SpellCard from "../src/components/spellCard";
+import SpellCard from "../components/spellCard";
 import {
   Paper,
   Table,
