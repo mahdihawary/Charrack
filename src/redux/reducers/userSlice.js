@@ -1,8 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, fetchBaseQuery, createApi } from "@reduxjs/toolkit";
 
 const initialState = [];
 
-const userSlice = createSlice({
+export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {},
