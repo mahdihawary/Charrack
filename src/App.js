@@ -2,17 +2,20 @@ import "./App.css";
 import React from "react";
 import { connect } from "react-redux";
 import CharShow from "./components/charShow";
+
 import {
-  getCharacter,
-  getRaces,
-  getClasses,
-  getCharacters,
-  getSpells,
-  getCharSpells,
-  getSkills,
-  resetChar,
-  patchCharacter,
-} from "./redux/actions";
+  useGetCharacterQuery,
+  useGetCharSpellsQuery,
+  useGetClassesQuery,
+  useGetRacesQuery,
+  useGetSkillsQuery,
+  useGetCharactersQuery,
+  useGetSpellsQuery,
+  usePatchCharacterMutation,
+  usePostCharacterMutation,
+} from "./services/apiSlice";
+import { resetChar } from "./redux/reducers/charSlice";
+
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import CharForm from "./containers/charForm";
@@ -40,8 +43,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <BrowserRouter>
-          {/* <Navigation /> */}
-          {/* <Routes>
+          <Navigation />
+          <Routes>
             <Route
               path="/characters/:id/level"
               render={() => <LevelForm submitHandler={this.submitHandler} />}
@@ -70,7 +73,7 @@ class App extends React.Component {
             <Route path="/characters" render={() => <CharIndex />} />
             <Route path="/creator" render={() => <CharForm />} />
             <Route path="/" render={() => <Diceroller />} />
-          </Routes> */}
+          </Routes>
         </BrowserRouter>
       </div>
     );
@@ -87,31 +90,31 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchChar: () => {
-      dispatch(getCharacter());
+      dispatch(useGetCharacterQuery());
     },
     fetchRaces: () => {
-      dispatch(getRaces());
+      dispatch(useGetRacesQuery());
     },
     fetchClasses: () => {
-      dispatch(getClasses());
+      dispatch(useGetClassesQuery());
     },
     fetchCharacters: () => {
-      dispatch(getCharacters());
+      dispatch(useGetCharactersQuery());
     },
     fetchSpells: () => {
-      dispatch(getSpells());
+      dispatch(useGetSpellsQuery());
     },
     fetchCharSpells: () => {
-      dispatch(getCharSpells());
+      dispatch(useGetCharSpellsQuery());
     },
     fetchSkills: () => {
-      dispatch(getSkills());
+      dispatch(useGetSkillsQuery());
     },
     localResetChar: () => {
       dispatch(resetChar());
     },
     localPatchCharacter: (inc, id) => {
-      dispatch(patchCharacter(inc, id));
+      dispatch(usePatchCharacterMutation(inc, id));
     },
   };
 };

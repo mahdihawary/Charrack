@@ -26,9 +26,6 @@ const charSlice = createSlice({
   name: "char",
   initialState,
   reducers: {
-    post(state, action) {
-      action.payload;
-    },
     incDex(state, action) {
       state.character.dexterity += action.payload;
     },
